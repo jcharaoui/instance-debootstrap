@@ -80,6 +80,10 @@ named 'defaults' in the source distribution for more details):
   a partition table will be installed on it. You need to have kpartx installed
   to use the 'msdos' option. The default is 'msdos' from Ganeti 2.0 onwards,
   but still 'none' if installing under Ganeti 1.2
+- PARTITION_SIZE: by default, when using 'msdos' partition style, a new
+  partition spanning the entire block device will be created. If a
+  smaller partition is required, its size can be specified here, for
+  example: '10G' will create a 10G partition and filesystem.
 
 Note that the settings file is important on the node that the instance
 is installed on, not the cluster master. This is indeed not a very good

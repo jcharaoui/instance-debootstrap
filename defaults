@@ -80,3 +80,8 @@ CLEAN_CACHE="14"
 # SSDs), feel free to increase it if your media has even bigger
 # allocation blocks
 # PARTITION_ALIGNMENT=2048
+
+# PARTITION_SIZE: the size of the partition containing the root filesystem; this
+# defaults to '' which translates to 'use the full size of the block device'. An
+# alternative size can be optionally specified, eg:
+# PARTITION_SIZE="10G"

@@ -103,7 +103,7 @@ format_disk0() {
   fi
 
   sfdisk $ARGS --quiet "$1" <<EOF
-${PARTITION_ALIGNMENT},,L,*
+${PARTITION_ALIGNMENT},${PARTITION_SIZE},L,*
 EOF
 }
 
@@ -169,6 +169,7 @@ else
 fi
 : ${PARTITION_STYLE:=$DEFAULT_PARTITION_STYLE} # disk partition style
 : ${OSP_FILESYSTEM:="ext4"}
+: ${PARTITION_SIZE:=""} # use 100% of the backing block device
 
 CACHE_DIR="@localstatedir@/cache/ganeti-instance-debootstrap"
 
